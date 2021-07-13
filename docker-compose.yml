@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  frontend-crud:
+    image: thiagosanrodrigues/frontendcrud:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - app-connect
+    depends_on:
+      - backend-crud
+  backend-crud:
+    image: thiagosanrodrigues/backendcrud:latest
+    ports:
+      - "3333:3333"
+    networks:
+      - app-connect
+    depends_on:
+      - postgres-crud
+  postgres-crud:
+    image: thiagosanrodrigues/dbcrud:latest
+    environment:
+      POSTGRES_PASSWORD: "crud2021"
+    ports:
+      - "15432:5432"
+    networks:
+      - app-connect
+  
+ 
+networks:
+  app-connect:
+      driver: bridge

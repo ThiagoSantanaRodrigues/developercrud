@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "CRUD Gazin",
+  "main": "index.js",
+  "author": "Thiago Santana Rodrigues",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.95.6",
+    "nodemon": "^2.0.9",
+    "npm-run-all": "^4.1.5",
+    "pg": "^8.6.0",
+    "uuidv4": "^6.2.10"
+  },
+  "scripts": {
+    "start": "npm-run-all migration seed run-project ",
+    "rollback": "knex migrate:rollback --all ",
+    "migration": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "start-db-docker": "npm-run-all  migration-db-docker seed-db-docker run-project-docker ",
+    "rollback-db-docker": "knex migrate:rollback --all ",
+    "migration-db-docker": "knex migrate:latest dbdocker",
+    "seed-db-docker": "knex seed:run dbdocker dbdocker",
+    "dblocal": "npm-run-all migration seed run-project-local ",
+    "run-project": "node src/app.js ",
+    "run-project-local": "node src/app.js dblocal",
+    "run-project-docker": "node src/app.js dbdocker",
+    "dev": "nodemon src/app.js local"
+  }
+}

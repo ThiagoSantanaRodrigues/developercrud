@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  postgres-crud:
+    image: thiagosanrodrigues/dbcrud:latest
+    environment:
+      POSTGRES_PASSWORD: "crud2021"
+    ports:
+      - "15432:5432"
