@@ -39,6 +39,27 @@
 <p>Ao fim da inicialização do projeto basta acessar o navegador com o endereço localhost:3000.</p>
 
 <h2 id='projeto-local'>Projeto e banco local</h2>
+<h3>Configurando o banco de dados</h3>
 <p>Está etapa é a mais trabalhosa, como pré-requisito deve-se ter o banco de dados PostgreSQL instalado.<br>
   O primeiro passo é criar um banco de dados com o nome <b>crud</b>.  
 </p>
+<p>Após esse processo execute o seguinte comando no banco de dados</p>
+<p><code>ALTER DATABASE crud SET datestyle TO "ISO, DMY";</code></p>
+<p><b>O banco de dados esta configurado para a senha 123</b></p>
+<p>Caso queira alterar a senha acesse o arquivo <b>backend/knexfile.js</b></p>
+
+<h3>Iniando backend</h3>
+<p>Após iniciar o banco de dados, abra um novo terminal e acesse a pasta <b>backend</b> e execute o seguinte comando:</p>
+<p><b>NPM</b></p>
+<p><code>npm run start-db-local</code></p> 
+<p><b>Yarn</b></p>
+<p><code>yarn start-db-local</code></p> 
+<p>Este comando irá executar as rotinas de criação de tabelas e trigger, popular banco de dados com informações.</p>
+
+<h3>Iniciando frontend</h3>
+<p>Após inciar o backend, abra um novo terminal e acesse a pasta <b>frontend</b> e execute o seguinte comando:</p>
+<p><b>NPM</b></p>
+<p><code>npm start</code></p> 
+<p><b>Yarn</b></p>
+<p><code>yarn start</code></p>
+<p>Ao fim da inicialização do projeto basta acessar o navegador com o endereço localhost:3000.</p>
