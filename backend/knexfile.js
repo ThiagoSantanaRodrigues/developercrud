@@ -1,5 +1,3 @@
-console.log('argumentos , knexfile', process.argv);
-
 let connection = {
   database: 'crud',
   user: 'postgres',
@@ -9,17 +7,15 @@ let connection = {
 };
 
 if (process.argv.find(element => element === 'dblocal')) {
-  console.log('local achou');
   connection = {
     database: 'crud',
     user: 'postgres',
-    password: 'crud2021',
+    password: '123',
     port: '5432'
   };
 }
 
 if (process.argv.find(element => element === 'dbdocker')) {
-  console.log('local achou');
   connection = {
     database: 'crud',
     user: 'postgres',
@@ -27,8 +23,6 @@ if (process.argv.find(element => element === 'dbdocker')) {
     port: '15432'
   };
 }
-
-console.log('conection',connection);
 
 module.exports = {
   development: {

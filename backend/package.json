@@ -19,14 +19,20 @@
     "rollback": "knex migrate:rollback --all ",
     "migration": "knex migrate:latest",
     "seed": "knex seed:run",
+    "run-project": "node src/app.js ",
+    
     "start-db-docker": "npm-run-all  migration-db-docker seed-db-docker run-project-docker ",
     "rollback-db-docker": "knex migrate:rollback --all ",
     "migration-db-docker": "knex migrate:latest dbdocker",
     "seed-db-docker": "knex seed:run dbdocker dbdocker",
-    "dblocal": "npm-run-all migration seed run-project-local ",
-    "run-project": "node src/app.js ",
-    "run-project-local": "node src/app.js dblocal",
     "run-project-docker": "node src/app.js dbdocker",
+
+    "start-db-local": "npm-run-all migration-db-local seed-db-local run-project-local ",
+    "rollback-db-local": "knex migrate:rollback --all ",
+    "migration-db-local": "knex migrate:latest dblocal",
+    "seed-db-local": "knex seed:run dblocal",
+    "run-project-local": "node src/app.js dblocal",
+    
     "dev": "nodemon src/app.js local"
   }
 }
