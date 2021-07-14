@@ -74,11 +74,11 @@
 <pre><code>/developers?name=thiago</code></pre>
 <p>Os filtros disponiveis são:</p>
 <ul>
-  <li><b>Name : </b>(nome) tipo string</li>
-  <li><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M - Masculino e F - Feminino</li>
-  <li><b>Hobby : </b> tipo string</li>
-  <li><b>age : </b>(idade) tipo inteiro</li>
-  <li><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY)</li>
+  <li><b>Name : </b>(nome) tipo string;</li>
+  <li><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M (Masculino) e F (Feminino);</li>
+  <li><b>Hobby : </b> tipo string;</li>
+  <li><b>age : </b>(idade) tipo inteiro;</li>
+  <li><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY);</li>
 </ul>
 <h2>Consulta por ID </h2>
 <p>Para consultar um unico desenvolverdor utilize o metodo <b>GET</b> para a rota <b>/developers/id</b>, passando o código do desenvolvedor na url.</p>
@@ -104,16 +104,16 @@
 }
 </code>
 </pre>
-<p><b>* o campo age(idade) será canculado automaticamente por uma trigger no banco de dados.</b></p>
+<p><b>* o campo age (idade) será canculado automaticamente por uma trigger no banco de dados.</b></p>
 
 <h3>Alterar</h3>
-<p>Para alterar um desenvolverdor utilize o metodo <b>PUT</b> para a rota <b>/developers/id</b>,informe o id na url no formato uuid, passe os dados no corpo da requisição no formato JSON.</p>
+<p>Para alterar um desenvolverdor utilize o metodo <b>PUT</b> para a rota <b>/developers/id</b> ,informe o id na url no formato uuid, passe os dados no corpo da requisição no formato JSON.</p>
 <p>Campos:</p>
 <ul>
-  <li><b>Name : </b>(nome) tipo string</li>
-  <li><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M - Masculino e F - Feminino</li>
-  <li><b>Hobby : </b> tipo string</li>
-  <li><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY)</li>
+  <li><b>Name : </b>(nome) tipo string;</li>
+  <li><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M (Masculino) e F (Feminino);</li>
+  <li><b>Hobby : </b> tipo string;</li>
+  <li><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY);</li>
 </ul>
 <pre>
 <code>
@@ -125,4 +125,8 @@
 }
 </code>
 </pre>
-<p><b>* o campo age(idade) será canculado automaticamente por uma trigger no banco de dados.</b></p>
+<p><b>* o campo age (idade) será canculado automaticamente por uma trigger no banco de dados.</b></p>
+
+<h3>Deletar</h3>
+<p>Para deletar um desenvolverdor utilize o metodo <b>DELETE</b> para a rota <b>/developers/id </b>,informe o id na url no formato uuid.</p>
+<pre><code>/developers/09bb0cfa-9cd5-4f4c-9b7d-92444cf9e63c</code></pre>
