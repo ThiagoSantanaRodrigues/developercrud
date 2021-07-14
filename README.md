@@ -67,23 +67,62 @@
 <p>Ao fim da inicialização do projeto basta acessar o navegador com o endereço localhost:3000.</p>
 
 <h2>API</h2>
-<h3>Consultas</h3>
+<h2>Consultas</h2>
 <p>Para consultar os desenvolvedores utilize o metodo <b>GET</b> para a rota <b>/developers</b>.
-<p>Para filtros utilize querystring</p>
+<h2>Consulta com filtro</h2>
+<p>Para filtrar utilize querystring</p>
 <pre><code>/developers?name=thiago</code></pre>
 <p>Os filtros disponiveis são:</p>
-<p><b>Name : </b>(nome) tipo string</p>
-<p><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M - Masculino e F - Feminino</p>
-<p><b>Hobby : </b> tipo string</p>
-<p><b>age : </b>(idade) tipo inteiro</p>
-<p><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY)</p>
+<ul>
+  <li><b>Name : </b>(nome) tipo string</li>
+  <li><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M - Masculino e F - Feminino</li>
+  <li><b>Hobby : </b> tipo string</li>
+  <li><b>age : </b>(idade) tipo inteiro</li>
+  <li><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY)</li>
+</ul>
+<h2>Consulta por ID </h2>
 <p>Para consultar um unico desenvolverdor utilize o metodo <b>GET</b> para a rota <b>/developers/id</b>, passando o código do desenvolvedor na url.</p>
 <p>O ID é do tipo uuid, informe um valor valido</p>
 <pre><code>/developers/b71b85af-af93-4647-864d-ed41adeb51d5</code></pre>
-<h3>Cadastro</h3>
+
+<h2>Cadastro</h2>
 <p>Para cadastrar um novo desenvolverdor utilize o metodo <b>POST</b> para a rota <b>/developers</b>, informe os dados no corpo da requisição no formato JSON.</p>
-<p>Campos disponiveis:</p>
-<p><b>Name : </b>(nome) tipo string</p>
-<p><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M - Masculino e F - Feminino</p>
-<p><b>Hobby : </b> tipo string</p>
-<p><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY)</p>
+<p>Campos:</p>
+<ul>
+  <li><b>Name : </b>(nome) tipo string</li>
+  <li><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M - Masculino e F - Feminino</li>
+  <li><b>Hobby : </b> tipo string</li>
+  <li><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY)</li>
+</ul>
+<pre>
+<code>
+{
+	"name" : "Thiago rodrigues",
+	"gender" : "M",
+	"hobby" : "programar",
+	"birthDate" : "27/12/1992"
+}
+</code>
+</pre>
+<p><b>* o campo age(idade) será canculado automaticamente por uma trigger no banco de dados.</b></p>
+
+<h3>Alterar</h3>
+<p>Para alterar um desenvolverdor utilize o metodo <b>PUT</b> para a rota <b>/developers/id</b>,informe o id na url no formato uuid, passe os dados no corpo da requisição no formato JSON.</p>
+<p>Campos:</p>
+<ul>
+  <li><b>Name : </b>(nome) tipo string</li>
+  <li><b>Gender : </b>(Sexo) tipo char que pode receber dois possiveis valores M - Masculino e F - Feminino</li>
+  <li><b>Hobby : </b> tipo string</li>
+  <li><b>birthdate : </b>(data nascimento): tipo date com formato dia/mes/ano (DD/MM/YYYY)</li>
+</ul>
+<pre>
+<code>
+{
+	"name" : "Thiago rodrigues",
+	"gender" : "M",
+	"hobby" : "programar",
+	"birthDate" : "27/12/1992"
+}
+</code>
+</pre>
+<p><b>* o campo age(idade) será canculado automaticamente por uma trigger no banco de dados.</b></p>
